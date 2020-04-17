@@ -14,6 +14,7 @@ describe("Repositories", () => {
 
     expect(isUuid(response.body.id)).toBe(true);
 
+    
     expect(response.body).toMatchObject({
       url: "https://github.com/Rocketseat/umbriel",
       title: "Umbriel",
@@ -110,7 +111,7 @@ describe("Repositories", () => {
     const repositories = await request(app).get("/repositories");
 
     const repository = repositories.body.find((r) => r.id === response.body.id);
-
+    
     expect(repository).toBe(undefined);
   });
 
